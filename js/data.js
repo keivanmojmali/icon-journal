@@ -1,4 +1,4 @@
-const data = {
+let data = {
   icons: {
   }
 };
@@ -9,5 +9,5 @@ data = previousData;
 
 window.addEventListener('beforeunload', (e)=>{
   const dataString = JSON.stringify(data);
-  localStorage.setItem('data',dataString)
-}))
+  localStorage.setItem('data', dataString);
+});
