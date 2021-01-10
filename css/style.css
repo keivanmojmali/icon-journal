@@ -1,3 +1,12 @@
+body {
+  box-sizing: border-box;
+}
+
 .full-height {
   min-height: 100vh;
+}
+
+.img-icon {
+  width: calc(100% / 3);
+  padding: 15px;
 }
