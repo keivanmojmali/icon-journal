@@ -10,3 +10,18 @@ body {
   width: calc(100% / 3);
   padding: 15px;
 }
+
+
+.img-nav {
+  width: 4rem;
+  padding: 15px;
+}
+
+.nav-styling {
+  width: 100%;
+  background-color: darkslategray;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
