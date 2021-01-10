@@ -13,6 +13,25 @@
 
 <body>
 
+  <nav>
+        <div class="container-fluid p-0 nav-styling">
+          <div class="pl-4">
+            <h5>Icon Journal</h5>
+          </div>
+          <ul class="pr-4 pt-2 list-unstyled d-flex justify-content-center align-items-center">
+            <li>
+              <img src="./Images/add-entry-pencil-black.png" alt="icon-one" class="img-nav">
+            </li>
+            <li>
+              <img src="./Images/add-entry-pencil-black.png" alt="icon-two" class="img-nav">
+            </li>
+            <li>
+              <img src="./Images/add-entry-pencil-black.png" alt="icon-three" class="img-nav">
+            </li>
+          </ul>
+        </div>
+  </nav>
+
   <div id="welcome" class="d-none container-fluid flex-column justify-content-center align-items-center full-height ">
     <div class="row m-4">
       <div class="col">
@@ -67,46 +86,20 @@
   </div>
 
 
-  <div class="container-fluid p-0">
+  <div class="container-fluid p-0 full-height align-items-center d-flex bg-dark">
 
-    <div class="container-fluid p-0 nav-styling">
-      <div class="pl-4">
-        <h5>Icon Journal</h5>
+    <div class="form p-3">
+      <div class="form-group">
+        <textarea name="entry" id="entry" rows="15" class="form-control"></textarea>
       </div>
-      <ul class="pr-4 pt-2 list-unstyled d-flex justify-content-center align-items-center">
-        <li>
-          <img src="./Images/add-entry-pencil-black.png" alt="icon-one" class="img-nav">
-        </li>
-        <li>
-          <img src="./Images/add-entry-pencil-black.png" alt="icon-two" class="img-nav">
-        </li>
-        <li>
-          <img src="./Images/add-entry-pencil-black.png" alt="icon-three" class="img-nav">
-        </li>
-      </ul>
-    </div>
-
-
-    <div class="container-fluid bg-dark p-3">
-      <div class="row">
-        <div class="col">
-          <div class="form">
-            <div class="row justify-content-center align-items-center d-flex">
-              <div class="form-group">
-                <textarea name="journal" id="entry" cols="30" rows="10" class="form-control"></textarea>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row d-flex justify-content-center align-items-center">
-          <div class="form-group d-flex justify-content-center align-items-center">
-            <button class="btn btn-sm btn-primary button-width"> <img src="./Images/add-entry-pencil-black.png"
-                alt="sub-icon" class="img-btn"></button>
-          </div>
-        </div>
+      <div class="form-group d-flex justify-content-center align-items-center">
+        <button class="btn btn-sm btn-primary button-width p-4" type="submit">
+          <img class="img-btn" src="./Images/add-entry-pencil-black.png" alt="button-img" >
+        </button>
       </div>
     </div>
-  </div>
+
+
   </div>
 
 
