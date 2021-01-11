@@ -4,10 +4,9 @@ let data = {
 };
 
 // const previousData = localStorage.getItem('data')
-// data = previousData;
+// data = JSON.parse(previousData);
 
 
 // window.addEventListener('beforeunload', (e)=>{
-//   const dataString = JSON.stringify(data);
-//   localStorage.setItem('data', dataString);
+//   localStorage.setItem('data', JSON.stringify(data));
 // });
