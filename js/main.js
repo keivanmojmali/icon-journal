@@ -1,19 +1,7 @@
+const $entryPosition = document.querySelector('#journalEntry');
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// Create DOM Function
-
+// Create DOM Entry Function
 function createDom(object) {
   const main = document.createElement('div');
   main.setAttribute('class','bg-light m-2 mb-4');
@@ -47,4 +35,13 @@ function createDom(object) {
   buttonImage.setAttribute('class', object.buttonAlt);
   buttonImage.appendChild(viewbutton);
   return main;
+}
+
+// Loads Entries to Entry Page
+function loadEntries() {
+  let loadObj = data.entries;
+  for(let i = 0; i < loadObj.length; i++) {
+    let createEntry = createDom(loadObj[i]);
+    $entryPosition.appendChild(createEntry);
+  }
 }
