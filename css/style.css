@@ -1,0 +1,41 @@
+body {
+  box-sizing: border-box;
+
+}
+
+.full-height {
+  min-height: 100vh;
+}
+
+.img-icon {
+  width: calc(100% / 3);
+  padding: 15px;
+}
+
+
+.img-nav {
+  width: 4rem;
+  padding: 15px;
+}
+
+.img-btn {
+  width: 30%;
+}
+
+.img-entry {
+  width: 15%;
+}
+
+
+.button-width {
+  width: 60%;
+}
+
+.nav-styling {
+  width: 100%;
+  background-color: darkslategray;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
