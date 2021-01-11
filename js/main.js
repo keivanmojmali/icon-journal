@@ -1,4 +1,6 @@
 const $entryPosition = document.querySelector('#journalEntry');
+const $entryForm = document.querySelector('#entryForm');
+const $entrySubmitBtn = document.querySelector('#entrySubmitBtn');
 
 
 // Create DOM Entry Function
@@ -45,3 +47,21 @@ function loadEntries() {
     $entryPosition.appendChild(createEntry);
   }
 }
+
+
+
+document.addEventListener('click',(e)=>{
+  console.log('vaue of e.target',e.target);
+
+  // This Saves the Journal Entry and Changes to Green Submit and Success Page
+  if (e.target.id === 'entryBtnImg' || e.target.id === 'entrySubmitBtn') {
+    e.preventDefault();
+    const title = $entryForm.elements.title.value;
+    const entry = $entryForm.elements.entry.value;
+    const pushToEntries = {'title': title, 'entry': entry }
+    data.entries.push(pushToEntries);
+    // ADD A CHANGE TO SUCCESS PAGE VIEW HERE
+
+  }
+
+})
