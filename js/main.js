@@ -1,4 +1,6 @@
 const $entryPosition = document.querySelector('#journalEntry');
+const $entryForm = document.querySelector('#entryForm');
+const $entrySubmitBtn = document.querySelector('#entrySubmitBtn');
 
 
 // Create DOM Entry Function
@@ -45,3 +47,14 @@ function loadEntries() {
     $entryPosition.appendChild(createEntry);
   }
 }
+
+
+
+document.addEventListener('click',(e)=>{
+
+  // This Saves the Journal Entry and Changes to Green Submit and Success Page
+  if (e.target.id === 'entryBtnImg' || e.target.id === 'entrySubmitBtn') {
+    const title =
+  }
+
+})

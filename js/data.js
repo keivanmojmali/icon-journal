@@ -1,6 +1,6 @@
 let data = {
   icons: {},
-  entries: [];
+  entries: []
 };
 
 const previousData = localStorage.getItem('data')
