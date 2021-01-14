@@ -1,4 +1,5 @@
 let user = {
+  uniqueId: 1,
   icons: {
 
   },
@@ -6,7 +7,7 @@ let user = {
 }
 
 
-const returningUser = localStorage.getItem('data')
+const returningUser = localStorage.getItem('user')
 
 if(returningUser !== null) {
   user = JSON.parse(returningUser);
@@ -14,5 +15,5 @@ if(returningUser !== null) {
 
 
 window.addEventListener('beforeunload', (e)=>{
-  localStorage.setItem('data', JSON.stringify(user));
+  localStorage.setItem('user', JSON.stringify(user));
 });

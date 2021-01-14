@@ -39,3 +39,8 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
+.icon-background {
+  background-image: url("./Images/add-entry-pencil-black.png");
+  background-size: auto;
+}
