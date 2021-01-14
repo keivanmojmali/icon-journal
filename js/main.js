@@ -90,7 +90,7 @@ function createDom(object) {
 
 // Loads Entries to Entry Page
 function loadEntries() {
-  let loadObj = data.entries;
+  let loadObj = user.entries;
   for(let i = 0; i < loadObj.length; i++) {
     let createEntry = createDom(loadObj[i]);
     $entryPosition.appendChild(createEntry);
@@ -101,6 +101,7 @@ function loadEntries() {
 
 document.addEventListener('click',(e)=>{
   console.log('vaue of e.target',e.target);
+
 
   // This Saves the Journal Entry and Changes to Green Submit and Success Page
   if (e.target.id === 'entryBtnImg' || e.target.id === 'entrySubmitBtn') {
