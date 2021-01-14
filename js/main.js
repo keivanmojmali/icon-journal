@@ -2,6 +2,55 @@ const $entryPosition = document.querySelector('#journalEntry');
 const $entryForm = document.querySelector('#entryForm');
 const $entrySubmitBtn = document.querySelector('#entrySubmitBtn');
 
+// main views
+const $navigation = document.querySelector('#navigation');
+const $welcome = document.querySelector('#welcome');
+const $journalEntry = document.querySelector('#journalEntry');
+const $formSuccess = document.querySelector('#formSuccess');
+const $viewJournal = document.querySelector('#viewJournal');
+// icon views
+const $iconOne = document.querySelector('#iconOne');
+
+
+
+
+
+
+// This Function Changes the View
+function changeView(view) {
+  switch(view) {
+    case 'welcome':
+    $navigation.classList.add('d-none');
+    $welcome.classList.remove('d-none');
+    $journalEntry.classList.add('d-none');
+    $formSuccess.classList.add('d-none');
+    $viewJournal.classList.add('d-none');
+    break;
+    case 'addJournal':
+      $navigation.classList.remove('d-none');
+      $welcome.classList.add('d-none');
+      $journalEntry.classList.remove('d-none');
+      $formSuccess.classList.add('d-none');
+      $viewJournal.classList.add('d-none');
+    break;
+    case 'viewJournal':
+      $navigation.classList.remove('d-none');
+      $welcome.classList.add('d-none');
+      $journalEntry.classList.add('d-none');
+      $formSuccess.classList.add('d-none');
+      $viewJournal.classList.remove('d-none');
+    break;
+    case 'successEntry':
+      $navigation.classList.remove('d-none');
+      $welcome.classList.add('d-none');
+      $journalEntry.classList.add('d-none');
+      $formSuccess.classList.remove('d-none');
+      $viewJournal.classList.add('d-none');
+  }
+}
+
+
+
 
 // Create DOM Entry Function
 function createDom(object) {
@@ -59,9 +108,19 @@ document.addEventListener('click',(e)=>{
     const title = $entryForm.elements.title.value;
     const entry = $entryForm.elements.entry.value;
     const pushToEntries = {'title': title, 'entry': entry }
-    data.entries.push(pushToEntries);
-    // ADD A CHANGE TO SUCCESS PAGE VIEW HERE
+    user.entries.push(pushToEntries);
+    changeView('successEntry');
 
   }
+
+
+  if(e.target.dataset.view === 'addJournal') {
+    changeView('addJournal')
+  }
+  if(e.target.dataset.view === 'viewJournal') {
+    changeView('viewJournal')
+  }
+
+
 
 })

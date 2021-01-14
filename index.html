@@ -14,19 +14,16 @@
 <body>
 
   <nav>
-        <div class="container-fluid p-0 nav-styling">
+        <div id="navigation" class="container-fluid p-0 nav-styling">
           <div class="pl-4">
             <h5>Icon Journal</h5>
           </div>
           <ul class="pr-4 pt-2 list-unstyled d-flex justify-content-center align-items-center">
             <li>
-              <img src="./Images/add-entry-pencil-black.png" alt="icon-one" class="img-nav">
+              <img src="./Images/add-entry-pencil-black.png" data-view="addJournal" alt="icon-one" class="img-nav">
             </li>
             <li>
-              <img src="./Images/add-entry-pencil-black.png" alt="icon-two" class="img-nav">
-            </li>
-            <li>
-              <img src="./Images/add-entry-pencil-black.png" alt="icon-three" class="img-nav">
+              <img src="./Images/add-entry-pencil-black.png" data-view="viewJournal" alt="icon-two" class="img-nav">
             </li>
           </ul>
         </div>
@@ -55,7 +52,7 @@
 
 
 
-  <div id="icon-one" class="d-none container-fluid flex-column justify-content-center align-items-center full-height">
+  <div id="iconOne" class="d-none container-fluid flex-column justify-content-center align-items-center full-height">
     <div class="row mb-5 pl-5 pt-4 pr-4">
       <div class="col">
         <h2>Set Up Icons: <br>
@@ -91,7 +88,7 @@
 
 
 <!-- this is the journal entry page -->
-<div class="container-fluid ">
+<div id="journalEntry" class="container-fluid ">
   <div class="row">
     <div class="col">
           <form id="entryForm" class="form p-3">
@@ -114,7 +111,7 @@
 
 <!-- once the form has been submitted - this message appears -->
 
-<div class="continaer-fluid p-3 d-none">
+<div id="formSuccess" class="continaer-fluid p-3 d-none">
   <div class="row p-3">
     <div class="col bg-light">
       <h3>
@@ -124,12 +121,12 @@
   </div>
   <div class="row m-3">
     <div class="col d-flex justify-content-center align-items-center">
-      <button class="btn btn-lg btn-primary">Take me to Entries</button>
+      <button data-view="viewJournal" class="btn btn-lg btn-primary">Take me to Entries</button>
     </div>
   </div>
   <div class="row m-3">
     <div class="col bg-dark d-flex justify-content-center align-items-center">
-      <button class="btn btn-lg btn-primary">
+      <button data-view="addJournal" class="btn btn-lg btn-primary">
         Add Another Entry
       </button>
     </div>
@@ -138,7 +135,7 @@
 
 
 <!-- this is the journal view entry -->
-<div class="container-fluid d-none" id="journalEntry">
+<div class="container-fluid d-none" id="viewJournal">
 
 
 

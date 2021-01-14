@@ -1,13 +1,12 @@
-let data = {
+let user = {
   icons: {},
   entries: []
 };
 
-// const previousData = localStorage.getItem('data')
-// data = previousData;
+
+user = JSON.parse(localStorage.getItem('data'));
 
 
-// window.addEventListener('beforeunload', (e)=>{
-//   const dataString = JSON.stringify(data);
-//   localStorage.setItem('data', dataString);
-// });
+window.addEventListener('beforeunload', (e)=>{
+  localStorage.setItem('data', JSON.stringify(data));
+});
