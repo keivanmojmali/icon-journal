@@ -1,12 +1,19 @@
 let user = {
-  icons: {},
+  uniqueId: 1,
+  icons: {
+
+  },
   entries: []
-};
+}
 
 
-user = JSON.parse(localStorage.getItem('data'));
+const returningUser = localStorage.getItem('user')
+
+if(returningUser !== null) {
+  user = JSON.parse(returningUser);
+}
 
 
 window.addEventListener('beforeunload', (e)=>{
-  localStorage.setItem('data', JSON.stringify(data));
+  localStorage.setItem('user', JSON.stringify(user));
 });
