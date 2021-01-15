@@ -54,12 +54,10 @@ function changeView(view) {
 
 
 
-
-// Create DOM Entry Function
+Create DOM Entry Function
 function createDom(object) {
-
   const main = document.createElement('div');
-  main.setAttribute('class','bg-light m-2 mb-4');
+  main.setAttribute('class','row bg-light m-2 mb-4');
   const mainCol = document.createElement('div');
   mainCol.setAttribute('class','col');
   main.appendChild(mainCol);
@@ -95,12 +93,12 @@ function createDom(object) {
   buttonImage.setAttribute('data-id',object.id);
   buttonImage.setAttribute('data-target', 'expandRetract');
   buttonImage.appendChild(viewbutton);
-  return main;
+  return mainCol;
 }
 
 // Loads Entries to Entry Page
 function loadEntries() {
-  // debugger
+
   let loadObj = user.entries;
   for(let i = 0; i < loadObj.length; i++) {
     // let createEntry = createDom(loadObj[i]);
