@@ -5,7 +5,7 @@ const $entrySubmitBtn = document.querySelector('#entrySubmitBtn');
 // main views
 const $navigation = document.querySelector('#navigation');
 const $welcome = document.querySelector('#welcome');
-const $journalEntry = document.querySelector('#journalEntry');
+// const $journalEntry = document.querySelector('#journalEntry');
 const $formSuccess = document.querySelector('#formSuccess');
 const $viewJournal = document.querySelector('#viewJournal');
 // icon views
@@ -147,7 +147,6 @@ document.addEventListener('click',(e)=>{
 
   // this is the navigation view
   if(e.target.dataset.view === 'addJournal') {
-    debugger;
     changeView('addJournal')
   }
   if(e.target.dataset.view === 'viewJournal') {
