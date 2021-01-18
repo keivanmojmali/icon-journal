@@ -79,7 +79,7 @@ function createDom(object) {
   const pCol = document.createElement('div');
   pCol.setAttribute('class','col d-none');
   pCol.setAttribute('id',object.id);
-  pCol.setAttribute('data-boolean','false');
+  pCol.setAttribute('data-show','false');
   pRow.appendChild(pCol);
 
 
@@ -128,7 +128,7 @@ function loadEntries() {
 
 
 document.addEventListener('click',(e)=>{
-  console.log('vaue of e.target',e.target);
+
 
 
   // This Saves the Journal Entry and Changes to Green Submit and Success Page
@@ -155,16 +155,18 @@ document.addEventListener('click',(e)=>{
 
 
   // this expands and retracts the journal entry parragraph
+  const targetId = e.target.dataset.id;
+  console.log('class value',e.target.dataset.show)
   if(e.target.dataset.target === 'expandRetract') {
-    const queryId = e.target.id;
-// FIX THIS IT NEEDS TO TAKE IN THE RIGHT ID TO THE SELECTOR
-  var $expandRetractJournalEntry = document.querySelector(queryId);
-  if(e.target.dataset.boolean === 'false') {
+  var $expandRetractJournalEntry = document.getElementById(targetId);
+
+  console.log('HHHHH',$expandRetractJournalEntry);
+// THIS CONDITIONAL IS NOT WORKING - NEEDS TO BE FIXED
+  if(e.target.class === 'col d-none') {
+    console.log('made it here');
     $expandRetractJournalEntry.classList.remove('d-none');
-    $expandRetractJournalEntry.dataset.boolean = 'true';
   } else {
     $expandRetractJournalEntry.classList.add('d-none');
-    $expandRetractJournalEntry.dataset.boolean = 'false';
   }
 }
 
