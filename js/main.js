@@ -79,7 +79,6 @@ function createDom(object) {
   const pCol = document.createElement('div');
   pCol.setAttribute('class','col d-none');
   pCol.setAttribute('id',object.id);
-  pCol.setAttribute('data-show','false');
   pRow.appendChild(pCol);
 
 
@@ -102,6 +101,7 @@ function createDom(object) {
   viewButton.setAttribute('class','btn btn-sm btn-primary button-width m-1');
   viewButton.setAttribute('data-id',object.id);
   viewButton.setAttribute('data-target','expandRetract');
+  viewButton.setAttribute('data-show', 'false');
   buttonCol.appendChild(viewButton);
 
   const buttonImage = document.createElement('img');
@@ -109,6 +109,7 @@ function createDom(object) {
   buttonImage.setAttribute('src', './Images/add-entry-pencil-black.png');
   buttonImage.setAttribute('class', 'img-btn');
   buttonImage.setAttribute('data-id',object.id);
+  buttonImage.setAttribute('data-show', 'false');
   buttonImage.setAttribute('data-target', 'expandRetract');
   viewButton.appendChild(buttonImage);
 
@@ -128,7 +129,7 @@ function loadEntries() {
 
 
 document.addEventListener('click',(e)=>{
-
+console.log('Value of E',e.target)
 
 
   // This Saves the Journal Entry and Changes to Green Submit and Success Page
@@ -156,16 +157,15 @@ document.addEventListener('click',(e)=>{
 
   // this expands and retracts the journal entry parragraph
   const targetId = e.target.dataset.id;
-  console.log('class value',e.target.dataset.show)
   if(e.target.dataset.target === 'expandRetract') {
   var $expandRetractJournalEntry = document.getElementById(targetId);
 
-  console.log('HHHHH',$expandRetractJournalEntry);
 // THIS CONDITIONAL IS NOT WORKING - NEEDS TO BE FIXED
-  if(e.target.class === 'col d-none') {
-    console.log('made it here');
+  if(e.target.dataset.show === 'false') {
+    e.target.dataset.show = 'true'
     $expandRetractJournalEntry.classList.remove('d-none');
   } else {
+    e.target.dataset.show = 'false'
     $expandRetractJournalEntry.classList.add('d-none');
   }
 }
