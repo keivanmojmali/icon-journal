@@ -1,11 +1,11 @@
-const $entryPosition = document.querySelector('#journalEntry');
+const $entryPosition = document.querySelector('#viewJournal');
 const $entryForm = document.querySelector('#entryForm');
 const $entrySubmitBtn = document.querySelector('#entrySubmitBtn');
 
 // main views
 const $navigation = document.querySelector('#navigation');
 const $welcome = document.querySelector('#welcome');
-// const $journalEntry = document.querySelector('#journalEntry');
+const $journalEntry = document.querySelector('#journalEntry');
 const $formSuccess = document.querySelector('#formSuccess');
 const $viewJournal = document.querySelector('#viewJournal');
 // icon views
