@@ -1,5 +1,0 @@
-Things you need to work on
-
--Change to Success Page once the form ahs been submitte
--change to a green border or dipsplay to show it has been done and
-success page

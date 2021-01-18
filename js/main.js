@@ -1,4 +1,4 @@
-const $entryPosition = document.querySelector('#journalEntry');
+const $entryPosition = document.querySelector('#viewJournal');
 const $entryForm = document.querySelector('#entryForm');
 const $entrySubmitBtn = document.querySelector('#entrySubmitBtn');
 
@@ -79,7 +79,6 @@ function createDom(object) {
   const pCol = document.createElement('div');
   pCol.setAttribute('class','col d-none');
   pCol.setAttribute('id',object.id);
-  pCol.setAttribute('data-boolean','false');
   pRow.appendChild(pCol);
 
 
@@ -102,6 +101,7 @@ function createDom(object) {
   viewButton.setAttribute('class','btn btn-sm btn-primary button-width m-1');
   viewButton.setAttribute('data-id',object.id);
   viewButton.setAttribute('data-target','expandRetract');
+  viewButton.setAttribute('data-show', 'false');
   buttonCol.appendChild(viewButton);
 
   const buttonImage = document.createElement('img');
@@ -109,6 +109,7 @@ function createDom(object) {
   buttonImage.setAttribute('src', './Images/add-entry-pencil-black.png');
   buttonImage.setAttribute('class', 'img-btn');
   buttonImage.setAttribute('data-id',object.id);
+  buttonImage.setAttribute('data-show', 'false');
   buttonImage.setAttribute('data-target', 'expandRetract');
   viewButton.appendChild(buttonImage);
 
@@ -128,7 +129,7 @@ function loadEntries() {
 
 
 document.addEventListener('click',(e)=>{
-  console.log('vaue of e.target',e.target);
+console.log('Value of E',e.target)
 
 
   // This Saves the Journal Entry and Changes to Green Submit and Success Page
@@ -147,7 +148,6 @@ document.addEventListener('click',(e)=>{
 
   // this is the navigation view
   if(e.target.dataset.view === 'addJournal') {
-    debugger;
     changeView('addJournal')
   }
   if(e.target.dataset.view === 'viewJournal') {
@@ -156,16 +156,17 @@ document.addEventListener('click',(e)=>{
 
 
   // this expands and retracts the journal entry parragraph
+  const targetId = e.target.dataset.id;
   if(e.target.dataset.target === 'expandRetract') {
-    const queryId = e.target.id;
-// FIX THIS IT NEEDS TO TAKE IN THE RIGHT ID TO THE SELECTOR
-  var $expandRetractJournalEntry = document.querySelector(queryId);
-  if(e.target.dataset.boolean === 'false') {
+  var $expandRetractJournalEntry = document.getElementById(targetId);
+
+// THIS CONDITIONAL IS NOT WORKING - NEEDS TO BE FIXED
+  if(e.target.dataset.show === 'false') {
+    e.target.dataset.show = 'true'
     $expandRetractJournalEntry.classList.remove('d-none');
-    $expandRetractJournalEntry.dataset.boolean = 'true';
   } else {
+    e.target.dataset.show = 'false'
     $expandRetractJournalEntry.classList.add('d-none');
-    $expandRetractJournalEntry.dataset.boolean = 'false';
   }
 }
 
